@@ -1,0 +1,88 @@
+// Copyright 2021 Dobrica Nicoleta Adriana 311CA
+// dobricanicole@gmail.com
+
+~~~The functions I used are found in my_octave_utils~~~
+
+To make things easier and more readable, I created a structure for a 3D array.
+In that structure, I memorised the contents of each 2D array, alongside its
+number of rows and columns.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 1:
+-> If the given command is 'L', then I load a new matrix, adding it into my
+structure of 3D arrays, after dynamically allocating it. After loading a new
+matrix, I check if the maximum dimension is reached -> if it does, then I will
+realloc the size of my array of matrices by doubling it.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 2:
+-> If the given command is 'D', I'm reading the given index and I check if it's
+correct. If that's the case, then I will print the rows and the columns of my
+matrix located at the given index.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 3:
+-> If the given command is 'P', I check if the index is correct. If that's the
+case, then I will print the contents of my matrix located at the given index.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 4:
+-> If the given command is 'C' and if the index is correct, then I have to
+resize the matrix. First, I allocate memory for two arrays: one for the rows
+and the other one for the columns.
+-> Resizing the matrix consists of the intersection of each element from both
+arrays. To do so, I create a copy of my matrix A, then I allocate new memory
+for A, changing its number of rows and columns with the size of the row array
+and column array. Then, I add the elements from the copy to my resized matrix A
+-> At the end, I have to free the memory of the copy matrix and both arrays.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 5:
+-> If the given command is 'M' and both indexes are correct, I create a new
+matrix C that will be the result of the multiplication. As such, this matrix
+will have the number of rows from the first matrix and the number of columns
+from the second matrix.
+-> After multiplying the matrices, we will calculate the elements of the matrix
+C by modulo 10007, to avoid integer overflow. If the element is negative, then
+I will add 10007 to it.
+-> At the end, I add the multiplied matrix in my list of matrices.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 6:
+-> If the given command is 'O', then I have to sort the list of matrices. The
+sorting algorithm is a simple one: swapping two matrices until they are in
+ascending order; the swapping and the sorting are based on the sum of the
+matrix's elements.
+-> That is, the matrix with the smallest sum of the elements will be the first
+one after sorting the list of matrices, and so on.
+-> When swapping two matrices, I also swap their number of rows and columns.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 7:
+-> If the given command is 'T' and the index is correct, then I will have to
+create the transpose of the matrix (not creating another matrix and adding it
+to my 3D array, but modifying the initial matrix). For this task, I have to
+dynamically allocate another matrix, the transpose, which will be only a
+temporary one. After creating the transpose of the matrix I assign its elements
+and the new number of rows and columns (now reversed) to the initial matrix.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 8:
+-> If the given command is 'F' and the index is correct, then that means I will
+have to free the matrix from memory. Since that matrix is in an array of more
+matrices, freeing it is not enough because it will leave a 'gap' in the array.
+-> To avoid that, I move all matrices with one position, starting from the
+given index.
+
+
+---> If the 'Q' command is issued, then the program will stop.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
