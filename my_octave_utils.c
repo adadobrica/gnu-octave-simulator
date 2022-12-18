@@ -5,7 +5,7 @@
 #include <string.h>
 #define MAX 100
 
-// creating a structure for a 3d arrat
+// creating a structure for a 3d array
 
 typedef struct {
 	int **elements;
